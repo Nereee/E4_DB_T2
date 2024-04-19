@@ -2,7 +2,7 @@
 
 -- -------drop database db_spoty5;
 
-Create database db_spoty5;
+Create database db_spoty5 Collate utf8_general_ci;
 
 use db_spoty5;
 
@@ -12,7 +12,7 @@ Create table MUSIKARIA(
 id_musikaria varchar(5) not null primary key,
 izenArtistikoa varchar(30) unique not null,
 irudia blob,
-ezaugarria enum('bakarlaria', 'taldea') unique,
+ezaugarria enum('bakarlaria', 'taldea'),
 deskribapena varchar(80) not null
 );
 
@@ -28,7 +28,7 @@ id_audio smallint not null primary key,
 izena varchar(20) not null,
 iraupena time not null,
 irudia blob,
-mota enum('podcast', 'abestia') unique
+mota enum('podcast', 'abestia')
 );
 
 Create table HIZKUNTZA(
@@ -50,9 +50,9 @@ id_album varchar(20) not null,
 izenburua varchar(20) not null,
 urtea date not null,
 generoa varchar(20) not null,
-id_musikaria varchar(5) not null,
+id_musikaria varchar(5),
 PRIMARY KEY (id_album),
-FOREIGN KEY (id_musikaria) references musikaria (id_musikaria)
+FOREIGN KEY (id_musikaria) references musikaria (id_musikaria) on delete set null on update cascade
 );
 
 Create table ABESTIA(
@@ -67,14 +67,14 @@ Create table BEZEROA(
 id_bezeroa varchar(5) not null,
 izena varchar(10) not null,
 abizena varchar(10) not null,
-id_hizkuntza enum('ES', 'EU', 'EN', 'FR', 'DE', 'CA', 'GA', 'AR') not null,
+id_hizkuntza enum('ES', 'EU', 'EN', 'FR', 'DE', 'CA', 'GA', 'AR'),
 erabiltzailea varchar(15) not null unique,
 pasahitza varchar(10) not null,
 jaiotze_data date not null,
 erregistro_data date not null,
 mota enum('free', 'premium') not null,
 PRIMARY KEY (id_bezeroa),
-FOREIGN KEY (id_hizkuntza) references hizkuntza (id_hizkuntza)
+FOREIGN KEY (id_hizkuntza) references hizkuntza (id_hizkuntza) on delete set null on update cascade
 );
 
 Create table PREMIUM(
@@ -94,7 +94,7 @@ FOREIGN KEY (id_audio) references audio (id_audio) on delete cascade on update c
 
 Create table ERREPRODUKZIOAK(
 id_bezeroa varchar(5) not null,
-id_audio smallint not null unique,
+id_audio smallint not null,
 erreprodukzio_data date not null,
 PRIMARY KEY (id_bezeroa, id_audio, erreprodukzio_data),
 FOREIGN KEY (id_bezeroa) references bezeroa (id_bezeroa) on delete cascade on update cascade,
@@ -117,15 +117,14 @@ izenburua varchar(20) not null,
 sorrera_data date not null,
 id_bezeroa varchar(5) not null,
 PRIMARY KEY (id_list),
-FOREIGN KEY (id_bezeroa) references bezeroa (id_bezeroa)
+FOREIGN KEY (id_bezeroa) references bezeroa (id_bezeroa) on delete cascade on update cascade
 );
 
 Create table PLAYLIST_ABESTIAK(
 id_audio smallint not null,
 id_list smallint not null,
-fecha date not null,
 PRIMARY KEY (id_audio, id_list),
 FOREIGN KEY (id_audio) references audio (id_audio) on delete cascade on update cascade,
-FOREIGN KEY (id_list) references playlist (id_list)
+FOREIGN KEY (id_list) references playlist (id_list) on delete cascade on update cascade
 );
 
