@@ -1,4 +1,4 @@
-# 4.taldearen datu basea
+# 4.erronkako datu basea
 
 -- -------drop database db_spoty5;
 
@@ -108,7 +108,7 @@ gehien_gustoko smallint not null,
 iruzkinak smallint not null,
 deskargak smallint not null,
 PRIMARY KEY (id_audio),
-FOREIGN KEY (id_audio) references audio (id_audio)
+FOREIGN KEY (id_audio) references audio (id_audio) on delete cascade on update cascade
 );
 
 Create table PLAYLIST(
