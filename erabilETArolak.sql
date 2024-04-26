@@ -5,6 +5,8 @@
 create user 'admin'@'localhost' identified by 'haia';
 grant all privileges on *.* to 'admin'@'localhost' with grant option;
 
+drop user'admin'@'localhost';
+
 #Departamentu buruko erabiltzaile
 create user 'dept_burua'@'localhost' identified by 'haia';
 grant all privileges on *.* to 'dept_burua'@'localhost' with grant option;
@@ -36,6 +38,7 @@ create role if not exists dbadmin, db_dept_burua, dbanalista1, dbanalista2, dbla
 -- repair table db_spoty5;
 
 -- GRANT ALL PRIVILEGES ON db_spoty5.* TO dbadmin;
+-- REPAIR TABLE mysql.tables_priv;
 
 GRANT SELECT, UPDATE ON db_spoty5.bezeroa to db_dept_burua;
 GRANT SELECT, UPDATE ON db_spoty5.erreprodukzioak to db_dept_burua;
