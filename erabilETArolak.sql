@@ -1,32 +1,34 @@
 
 -- ---------------------------- ERABILTZAILEAK ------------------------------------------------------------------------
 
-#Admin erabiltzaile
-create user 'admin'@'localhost' identified by 'haia';
-grant all privileges on *.* to 'admin'@'localhost' with grant option;
 
-drop user'admin'@'localhost';
+#Admin erabiltzaile
+create user 'admin'@'10.5.6.219' identified by '12345';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'10.5.6.219' WITH GRANT OPTION;
+
+-- flush privileges; 
+ -- drop user 'admin'@'10.5.6.219';
 
 #Departamentu buruko erabiltzaile
-create user 'dept_burua'@'localhost' identified by 'haia';
-grant all privileges on *.* to 'dept_burua'@'localhost' with grant option;
+create user 'dept_burua'@'10.5.6.219' identified by 'haia';
+grant all privileges on *.* to 'dept_burua'@'10.5.6.219' with grant option;
 
 #Analista1 erabiltzaile
-create user 'analista1'@'localhost' identified by 'haia';
-grant all privileges on *.* to 'analista1'@'localhost' with grant option;
+create user 'analista1'@'10.5.6.219' identified by 'haia';
+grant all privileges on *.* to 'analista1'@'10.5.6.219' with grant option;
 
 #Analista2 erabiltzaile
-create user 'analista2'@'localhost' identified by 'haia';
-grant all privileges on *.* to 'analista2'@'localhost' with grant option;
+create user 'analista2'@'10.5.6.219' identified by 'haia';
+grant all privileges on *.* to 'analista2'@'10.5.6.219' with grant option;
 
 #Langilearen erabiltzailea
-create user 'langilea'@'localhost' identified by 'haia';
-grant all privileges on *.* to 'langilea'@'localhost' with grant option;
+create user 'langilea'@'10.5.6.219' identified by 'haia';
+grant all privileges on *.* to 'langilea'@'10.5.6.219' with grant option;
 
 
 #Bezeroaren erabiltailea
-create user 'bezeroa'@'localhost' identified by 'haia';
-grant all privileges on *.* to 'bezeroa'@'localhost' with grant option;
+create user 'bezeroa'@'10.5.6.219' identified by 'haia';
+grant all privileges on *.* to 'bezeroa'@'10.5.6.219' with grant option;
 
 
 -- --------------------------------------- ROLAK ETA BAIMENAK 	-----------------------------------------------------------------
