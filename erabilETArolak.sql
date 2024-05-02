@@ -3,11 +3,11 @@
 
 
 #Admin erabiltzaile
-create user 'admin'@'10.5.6.219' identified by '12345';
-GRANT ALL PRIVILEGES ON *.* TO 'admin'@'10.5.6.219' WITH GRANT OPTION;
+create user 'admin'@'%' identified by '12345';
+GRANT ALL PRIVILEGES ON db_spoty5.* TO 'admin'@'localhost';
 
 -- flush privileges; 
- -- drop user 'admin'@'10.5.6.219';
+ -- drop user 'admin'@'%'; 
 
 #Departamentu buruko erabiltzaile
 create user 'dept_burua'@'10.5.6.219' identified by 'haia';
