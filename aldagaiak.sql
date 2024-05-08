@@ -1,0 +1,1 @@
+SELECT @id := id_musikaria FROM musikaria WHERE izenArtistikoa = 'Bad Bunny';
