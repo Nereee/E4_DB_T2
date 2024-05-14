@@ -51,6 +51,7 @@ izenburua varchar(20) not null,
 urtea date not null,
 generoa varchar(20) not null,
 id_musikaria int,
+irudia longblob,
 PRIMARY KEY (id_album),
 FOREIGN KEY (id_musikaria) references musikaria (id_musikaria) on delete set null on update cascade
 );

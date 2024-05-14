@@ -12,12 +12,6 @@ Insert into hizkuntza  values ('GA', 'zuk hautatutako hizkuntzan');
 Insert into hizkuntza  values ('AR', 'zuk hautatutako hizkuntzan');
 
 
-Insert into album (izenburua, urtea, generoa, id_musikaria) values ('Un verano sin ti', '2022-09-12', 'trap', 1);
-Insert into album (izenburua, urtea, generoa, id_musikaria) values ('Worldwide Angel', '2018-02-21', 'dancehall', 2);
-Insert into album (izenburua, urtea, generoa, id_musikaria) values ('Music of the Spheres', '2021-10-15', 'pop', 3);
-Insert into album (izenburua, urtea, generoa, id_musikaria) values ('Love at First Sting', '1984-03-27', 'rock', 4);
-
-
 Insert into bezeroa (izena, abizena, id_hizkuntza, erabiltzailea, pasahitza, jaiotze_data, erregistro_data, mota) values ('Irune', 'Casquet', 'ES', 'icas', 'haia', '2005-01-01', '2023-01-01', 'free');
 Insert into bezeroa (izena, abizena, id_hizkuntza, erabiltzailea, pasahitza, jaiotze_data, erregistro_data, mota) values ('Alaitz', 'Valerio', 'ES', 'aval', 'haia', '2005-05-01', '2023-01-01', 'free');
 Insert into bezeroa (izena, abizena, id_hizkuntza, erabiltzailea, pasahitza, jaiotze_data, erregistro_data, mota) values ('Hegoi', 'Vazquez', 'ES', 'hvazquez', 'haia', '2005-07-01', '2023-01-01', 'free');
