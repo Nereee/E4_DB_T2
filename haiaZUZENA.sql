@@ -25,7 +25,7 @@ deskribapena varchar(110) not null
 
 Create table audio(
 id_audio int auto_increment not null primary key,
-izena varchar(20) not null,
+izena varchar(80) not null,
 iraupena time not null,
 irudia blob,
 mota enum('podcast', 'abestia')
@@ -38,7 +38,10 @@ deskribapena varchar(30) not null
 
 Create table podcast(
 id_audio int not null,
-kolaboratzaileak varchar(40), 
+izena varchar(80) not null,
+iraupena time not null,
+irudia longblob,
+kolaboratzaileak varchar(40),
 id_podcaster int not null,
 PRIMARY KEY (id_audio),
 FOREIGN KEY (id_audio) references audio (id_audio) on delete cascade on update cascade,
@@ -51,6 +54,7 @@ izenburua varchar(20) not null,
 urtea date not null,
 generoa varchar(20) not null,
 id_musikaria int,
+irudia longblob,
 PRIMARY KEY (id_album),
 FOREIGN KEY (id_musikaria) references musikaria (id_musikaria) on delete set null on update cascade
 );
@@ -127,4 +131,3 @@ PRIMARY KEY (id_audio, id_list),
 FOREIGN KEY (id_audio) references audio (id_audio) on delete cascade on update cascade,
 FOREIGN KEY (id_list) references playlist (id_list) on delete cascade on update cascade
 );
-
